@@ -1,6 +1,6 @@
 {
   "name": "@beanjs/fastify-session",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "lint": "npm run lint:standard && npm run lint:typescript",
@@ -31,9 +31,7 @@
     "type": "git",
     "url": "git+https://github.com/beanify/fastify-session.git"
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "pre-commit": ["lint"],
   "dependencies": {
     "ajv": "^7.0.3",
     "cookie-signature": "^1.1.0",

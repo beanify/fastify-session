@@ -68,7 +68,6 @@ module.exports = fp(function (fastify, opts, done) {
     }
 
     req.session = await store.get(id)
-    console.log(req.session)
   })
   fastify.addHook('onSend', async function (req, rep) {
     const sn = req.session
