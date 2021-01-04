@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "secret": {
+      "type": "string"
+    },
+    "cookieName": {
+      "type": "string",
+      "default": "sessionId"
+    },
+    "cookie": {
+      "type": "object",
+      "properties": {
+        "secure": {
+          "type": "boolean",
+          "default": true
+        },
+        "maxAge": {
+          "type": "number",
+          "default": 7200
+        },
+        "path": {
+          "type": "string",
+          "default": "/"
+        },
+        "httpOnly": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "default": {}
+    }
+  },
+  "required": ["secret"]
+}
