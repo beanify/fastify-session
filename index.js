@@ -73,12 +73,14 @@ module.exports = fp(function (fastify, opts, done) {
     req.session = await store.get(id)
   })
   fastify.addHook('onSend', async function (req, rep) {
+    const { store, cookie, cookieName } = opts
+
     const sn = req.session
     if (!sn) {
+      rep.clearCookie(cookieName)
       return
     }
 
-    const { store, cookie, cookieName } = opts
     await store.set(sn.id, sn)
     const eid = cookieSignature.sign(sn.id, opts.secret)
     rep.setCookie(cookieName, eid, cookie)
