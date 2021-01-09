@@ -62,6 +62,9 @@ module.exports = fp(function (fastify, opts, done) {
     }
 
     const eid = req.cookies[cookieName]
+    if (!eid) {
+      return
+    }
     const id = cookieSignature.unsign(eid, opts.secret)
     if (id === false) {
       return
